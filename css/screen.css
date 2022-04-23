@@ -211,8 +211,11 @@ a:focus {
         padding-bottom: 48px;
     }
 }
-.o-row—neutral-x-light{
+.o-row--neutral-x-light{
     background: #f7f7f7;
+}
+.o-row--linear-gradient-1{
+    background: linear-gradient(to top right, #5051DB, #3887F7);
 }
 /*
     Objects: Container
@@ -412,7 +415,47 @@ a:focus {
         display: block;
     }
 }
+/*
+    Component: footer
+    ---
+    Main footer of the website
+*/
 
+
+
+.c-footer__nav {
+    display: flex;
+    flex-wrap: wrap;
+}
+.c-footer__logo {
+    width: 100%;
+}
+
+.c-footer__nav {
+    width: 50%;
+}
+
+@media (min-width: 768px) {
+    .c-footer {
+    }
+
+    .c-footer__logo {
+        justify-content:center;
+    }
+
+    .c-footer__nav {}
+}
+
+@media (min-width: 992px) {
+    .c-footer {
+    }
+
+    .c-footer__logo {}
+
+    .c-footer__logo .c-logo {}
+
+    .c-footer__nav {}
+}
 
 /*
     Component: Logo
@@ -480,7 +523,68 @@ a:focus {
     }
 }
 
+/*
+    Component: CTA link
+    ---
+    Small cta link with custom animation
+*/
 
+.c-link-cta {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    padding: 4px 0;
+    transition: color .175s ease-in;
+}
+
+.c-link-cta,
+.c-link-cta:visited,
+.c-link-cta:active {
+    color: #7373F5;
+}
+
+.c-link-cta::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    transform: scaleX(.5);
+    transform-origin: left;
+    transition-property: transform, background-color;
+    transition-duration:.175s;
+    transition-timing-function: ease;
+    background-color: #7373F5;
+}
+
+.c-link-cta:hover {
+    color: #3E3EA8;
+}
+
+.c-link-cta:hover::after {
+    transform: scaleX(1);
+    background-color:#3E3EA8;
+}
+.c-link-cta--reverse,
+.c-link-cta--reverse:visited,
+.c-link-cta--reverse:active
+{
+    color:white;
+}
+.c-link-cta--reverse::after{
+    background-color:white;
+}
+.c-link-cta--reverse:hover{
+   color: white;
+}
+.c-link-cta--reverse:hover::after{
+    background-color: white;
+}
 /*------------------------------------*\
   #UTILITIES
 \*------------------------------------*/
@@ -524,7 +628,23 @@ a:focus {
 .u-max-width-none {
     max-width: none !important;
 }
+/*
+    Utilities: color
+    ---
+    Utility classes to put specific colors onto elements
+*/
 
+.u-color-primary-light {
+    color: #7373F5 !important;
+}
+
+.u-color-primary-base {
+    color: #5051DB !important;
+}
+
+.u-color-primary-dark {
+    color: #3E3EA8 !important;
+}
 /*
     Utility: Flex
     ---

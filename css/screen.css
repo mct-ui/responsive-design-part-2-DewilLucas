@@ -457,17 +457,17 @@ a:focus {
     .c-footer {
         justify-content: space-between;
     }
-
-    .c-footer__logo {
-    width: auto;
-    }
-
-    .c-footer__logo .c-logo {
-        order: -1;
-    }
-
+    
     .c-footer__nav {
         padding: 0;
+    }
+    
+    .c-footer__logo+.c-footer__nav {
+        order: -1;
+    }
+    
+    .c-footer__logo {
+        width: auto;
     }
 }
 
@@ -479,6 +479,8 @@ a:focus {
 
 .c-logo {
     height: 32px;
+    display: flex;
+    align-items: center;
 }
 
 .c-logo__svg {
